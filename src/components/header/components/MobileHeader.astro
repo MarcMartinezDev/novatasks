@@ -1,0 +1,57 @@
+---
+import HamburgerIcon from "./HamburgerIcon.astro";
+import Logo from "../../Logo.astro";
+import Nav from "./Nav.astro";
+---
+
+<!-- Mobile Nav -->
+<div
+  class="relative flex justify-between items-center p-2 m-auto z-50 bg-white w-full md:hidden"
+>
+  <Logo />
+  <HamburgerIcon />
+</div>
+
+<!-- Slide-in Menu -->
+<div
+  id="menu"
+  class="fixed inset-0 bg-white z-50 translate-x-full transition-transform duration-300 md:hidden"
+  aria-label="Mobile Navigation"
+>
+  <div class="flex flex-col justify-between h-full p-6">
+    <ul class="flex flex-col gap-6 font-medium text-gray-600 text-lg">
+      <Nav label="Features" />
+      <Nav label="How" />
+      <Nav label="Comparison" />
+      <Nav label="Pricing" />
+      <Nav label="Testimonials" />
+      <Nav label="FAQ" />
+    </ul>
+    <button id="close" class="mt-auto text-xl font-semibold self-end">✕</button>
+  </div>
+</div>
+
+<script>
+  const hamburger = document.querySelector("#menu-toggle");
+  const menu = document.querySelector("#menu");
+  const close = document.querySelector("#close");
+  const navLinks = menu?.querySelectorAll("a");
+
+  hamburger?.addEventListener("click", () => {
+    menu?.classList.remove("translate-x-full");
+    menu?.classList.add("translate-x-0");
+    hamburger.setAttribute("aria-expanded", "true");
+  });
+
+  close?.addEventListener("click", () => {
+    menu?.classList.add("translate-x-full");
+    hamburger?.setAttribute("aria-expanded", "false");
+  });
+
+  navLinks?.forEach((link) => {
+    link.addEventListener("click", () => {
+      menu?.classList.add("translate-x-full");
+      hamburger?.setAttribute("aria-expanded", "false");
+    });
+  });
+</script>

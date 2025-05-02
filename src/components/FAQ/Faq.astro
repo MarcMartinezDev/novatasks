@@ -1,0 +1,33 @@
+---
+import Detail from "./components/Detail.astro";
+---
+
+<section class="px-2" id="FAQ">
+  <div
+    class="max-w-4xl mx-auto text-center opacity-0 -translate-y-20 transition-all duration-1000 content-down"
+  >
+    <h2>Frequently Asked Questions</h2>
+    <p class="subtitle">Everything you need to know about using NovaTasks</p>
+  </div>
+
+  <div
+    class="space-y-4 md:mx-auto md:w-2/3 xl:w-1/3 opacity-0 -translate-y-20 transition-all duration-1000 content-down"
+  >
+    <Detail
+      summary="Is NovaTasks free to use?"
+      answer="Yes! NovaTasks has a completely free plan with essential features. You can upgrade anytime to unlock advanced functionality."
+    />
+    <Detail
+      summary="Can I sync tasks between devices?"
+      answer="Absolutely. Your tasks are synced in real-time across all devices connected to your account."
+    />
+    <Detail
+      summary="Does NovaTasks work offline?"
+      answer="Yes, NovaTasks supports offline mode. Your changes will be synced automatically once you're back online."
+    />
+    <Detail
+      summary="How is my data stored and protected?"
+      answer="Your data is encrypted and securely stored using industry-standard protocols. We take privacy seriously and never share your tasks or personal information with third parties."
+    />
+  </div>
+</section>

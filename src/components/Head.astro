@@ -1,0 +1,50 @@
+---
+const {
+  title = "NovaTasks. Clarity. Focus. Flow.",
+  description = "NovaTasks is the simplest and smartest way to organize your day. Plan, prioritize, and achieve more with intelligent assistance and seamless sync.",
+  url = "https://www.novatasks.com",
+  image = "https://www.novatasks.com/og-banner.webp",
+} = Astro.props;
+---
+
+<!-- Charset & Viewport -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<!-- Title & Description -->
+<title>{title}</title>
+<meta name="description" content={description} />
+<meta name="robots" content="index, follow" />
+
+<!-- Canonical -->
+<link rel="canonical" href={url} />
+
+<!-- Sitemap -->
+<link rel="sitemap" href="/sitemap-index.xml" />
+
+<!-- Open Graph (Facebook, LinkedIn, etc.) -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={url} />
+<meta property="og:image" content={image} />
+<meta property="og:image:alt" content="NovaTasks app preview" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={image} />
+
+<!-- Web Analytics (GoatCounter example) -->
+<script
+  data-goatcounter="https://devmarcmartinez.goatcounter.com/count"
+  async
+  src="//gc.zgo.at/count.js"></script>
+
+<!-- Favicon -->
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+<!-- Apple Touch Icon -->
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />

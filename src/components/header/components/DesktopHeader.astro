@@ -1,0 +1,47 @@
+---
+import Nav from "./Nav.astro";
+import Logo from "../../Logo.astro";
+---
+
+<!-- Desktop Nav -->
+<div
+  id="header"
+  class="hidden md:flex backdrop-blur-md bg-white/80 border-b border-gray-200 transition-all duration-300 transform translate-y-0 justify-between items-center sticky top-0 w-full z-50 px-6 py-3 shadow-sm"
+>
+  <Logo />
+  <nav role="navigation" aria-label="Main navigation">
+    <ul class="flex gap-6 font-medium text-gray-600">
+      <Nav label="Features" />
+      <Nav label="How" />
+      <Nav label="Comparison" />
+      <Nav label="Pricing" />
+      <Nav label="Testimonials" />
+      <Nav label="FAQ" />
+    </ul>
+  </nav>
+  <div class="flex items-center gap-4">
+    <a href="/login" class="text-gray-600 hover:text-gray-900 transition"
+      >Log in</a
+    >
+    <a
+      href="/signup"
+      class="px-4 py-2 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition"
+    >
+      Get Started
+    </a>
+  </div>
+</div>
+
+<script>
+  let lastScrollY = window.scrollY;
+  const header = document.getElementById("header");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > lastScrollY) {
+      header?.classList.add("translate-y-[-100%]");
+    } else {
+      header?.classList.remove("translate-y-[-100%]");
+    }
+    lastScrollY = window.scrollY;
+  });
+</script>

@@ -1,0 +1,43 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/hero/Hero.astro";
+import Features from "../components/features/Features.astro";
+import How from "../components/how/How.astro";
+import Pricing from "../components/pricing/Pricing.astro";
+import Testimonials from "../components/testimonials/Testimonials.astro";
+import Faq from "../components/FAQ/Faq.astro";
+import Comparison from "../components/comparison/Comparison.astro";
+---
+
+<Layout>
+  <main>
+    <Hero />
+    <Features />
+    <How />
+    <Comparison />
+    <Pricing />
+    <Testimonials />
+    <Faq />
+  </main>
+</Layout>
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.remove("opacity-0", "-translate-y-20");
+          entry.target.classList.add("opacity-100", "translate-y-0");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: .3,
+    }
+  );
+
+  document.querySelectorAll(".content-down").forEach((el) => {
+    observer.observe(el);
+  });
+</script>

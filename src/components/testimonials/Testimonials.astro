@@ -1,0 +1,37 @@
+---
+import Card from "./components/Card.astro";
+---
+
+<section id="Testimonials">
+  <div
+    class="mx-auto text-center px-2 opacity-0 -translate-y-20 transition-all duration-1000 content-down"
+  >
+    <h2>What people are saying</h2>
+    <p class="subtitle">
+      Hear from real users who’ve made NovaTasks part of their day.
+    </p>
+  </div>
+
+  <div
+    class="flex overflow-x-scroll scrollbar-hide p-2 gap-6 lg:mx-auto lg:flex-col opacity-0 -translate-y-20 transition-all duration-1000 content-down"
+  >
+    <Card
+      stars="★★★★★"
+      testimonial="Since switching to NovaTasks, my workday finally has structure."
+      name="Clara G., freelance designer"
+      date="June 12, 2025"
+    />
+    <Card
+      stars="★★★★"
+      testimonial="I love how I don’t have to mess with dozens of settings. Simple and effective."
+      name="Marcos P., frontend developer"
+      date="March 1, 2025"
+    />
+    <Card
+      stars="★★★★★"
+      testimonial="NovaTasks has made collaboration with my team a breeze. Love it."
+      name="Elena M., project manager"
+      date="April 21, 2025"
+    />
+  </div>
+</section>

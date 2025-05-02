@@ -1,0 +1,41 @@
+---
+import calendar from "../../assets/images/calendar.webp";
+import tasks from "../../assets/images/tasks.webp";
+import graphic from "../../assets/images/graphic.webp";
+import Card from "./components/Card.astro";
+---
+
+<section id="Features" class="bg-white overflow-hidden" data-animate>
+  <div class="max-w-4xl mx-auto text-center px-2 opacity-0 -translate-y-20 transition-all duration-1000 content-down">
+    <h2 class="text-4xl font-bold mb-4">
+      Powerful Features to Boost Your Workflow
+    </h2>
+    <p class="text-lg text-gray-600">
+      Discover how NovaTasks helps you stay organized, efficient, and
+      focused—powered by smart, minimalist design.
+    </p>
+  </div>
+
+  <div
+    class="flex flex-wrap mx-auto justify-center w-full gap-10 opacity-0 -translate-y-20 transition-all duration-1000 content-down"
+  >
+    <Card
+      image={calendar}
+      alt="Calendar overview interface"
+      title="Smart Planner"
+      desc="Organize your day effortlessly. Visualize your tasks, events, and goals in an intuitive calendar. Our app adapts to your pace and suggests the best way to structure your week to stay focused and balanced"
+    />
+    <Card
+      image={tasks}
+      alt="Tasks & Reminders"
+      title="Tasks overview interface"
+      desc="Never miss what matters. Create prioritized tasks, add subtasks, and receive smart reminders that adjust to your availability. Everything in one place, stress-free"
+    />
+    <Card
+      image={graphic}
+      alt="Progress Tracking overview interface"
+      title="Progress Tracking"
+      desc="Stay motivated with visual progress tracking. See how your tasks evolve over time, mark milestones, and celebrate completions"
+    />
+  </div>
+</section>

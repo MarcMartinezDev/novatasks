@@ -1,0 +1,18 @@
+---
+const { label } = Astro.props as {
+  label: string;
+};
+---
+
+<li class="group cursor-pointer list-none">
+  <a
+    href={`/#${label}`}
+    class="block hover:text-blue-600 transition-colors duration-200"
+  >
+    {label}
+    <div
+      class="w-0 bg-blue-600 h-[3px] rounded-full group-hover:w-full transition-all"
+    >
+    </div>
+  </a>
+</li>

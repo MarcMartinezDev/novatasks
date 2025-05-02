@@ -1,0 +1,39 @@
+---
+const { num, title, desc, btn } = Astro.props as {
+  num: string;
+  title: string;
+  desc: string;
+  btn?: boolean;
+};
+---
+
+<article class="group flex flex-col">
+  <div class="flex gap-4">
+    <div
+      class="w-10 h-10 hidden md:flex items-center justify-center rounded-full bg-blue-600 text-white font-bold group-hover:bg-blue-400 transition-all duration-400"
+    >
+      {num}
+    </div>
+    <div class="ml-4">
+      <h3
+        class="text-xl text-center md:text-left text-blue-900 font-semibold mb-1 group-hover:text-blue-600 transition-all duration-300"
+      >
+        {title}
+      </h3>
+      <p class="text-gray-500 text-center md:text-left">
+        {desc}
+      </p>
+    </div>
+  </div>
+  {
+    btn ? (
+      <a
+        href="/login"
+        aria-label="Start using NovaTasks"
+        class="mt-4 bg-blue-600 py-2 px-10 rounded-full w-fit self-center md:self-end text-white hover:bg-blue-500 transition-all"
+      >
+        Get Started
+      </a>
+    ) : null
+  }
+</article>

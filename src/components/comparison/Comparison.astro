@@ -1,0 +1,43 @@
+---
+import ComparisonRow from "./components/ComparisonRow.astro";
+---
+
+<section id="Comparison" class="px-2 bg-white">
+  <div
+    class="mx-auto text-center opacity-0 -translate-y-20 transition-all duration-1000 content-down"
+  >
+    <h2>Why NovaTasks?</h2>
+    <p class="subtitle">
+      A clear view of how NovaTasks stands out from the rest.
+    </p>
+  </div>
+
+  <div
+    class="content__container px-2 opacity-0 -translate-y-20 transition-all duration-1000 content-down"
+  >
+    <div class="w-3/4 mx-auto md:w-full lg:max-w-4xl space-y-2">
+      <div
+        class="hidden md:grid md:grid-cols-5 md:gap-6 font-semibold md:px-6 pb-5 text-gray-600 items-center"
+      >
+        <div class="col-span-2">Feature</div>
+        <div class="text-center text-blue-900 text-lg">NovaTasks</div>
+        <div class="text-center">Todoist</div>
+        <div class="text-center">Notion</div>
+      </div>
+
+      <ComparisonRow
+        title="Ai Task Suggestions"
+        todolist={false}
+        notion={false}
+      />
+      <ComparisonRow title="Real-time Sync" todolist={true} notion={true} />
+      <ComparisonRow title="Minimalist UI" todolist={false} notion={false} />
+      <ComparisonRow title="Offline Mode" todolist={true} notion={false} />
+      <ComparisonRow
+        title="Learning-Based Prioritzation"
+        todolist={false}
+        notion={false}
+      />
+    </div>
+  </div>
+</section>

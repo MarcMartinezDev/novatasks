@@ -1,0 +1,67 @@
+---
+const { title, todolist, notion } = Astro.props as {
+  title: string;
+  todolist: boolean;
+  notion: boolean;
+};
+---
+
+<!-- Desktop Row -->
+<div
+  class="hidden md:grid grid-cols-4 md:grid-cols-5 gap-6 items-center px-6 py-4 rounded-lg shadow-sm"
+>
+  <div class="col-span-2 font-medium">{title}</div>
+  <div class="text-center text-blue-900 font-semibold">✔</div>
+  {
+    todolist ? (
+      <div class="text-center text-blue-900 font-semibold">✔</div>
+    ) : (
+      <div class="text-center text-gray-600 font-semibold">✘</div>
+    )
+  }
+  {
+    notion ? (
+      <div class="text-center text-blue-900 font-semibold">✔</div>
+    ) : (
+      <div class="text-center text-gray-600 font-semibold">✘</div>
+    )
+  }
+</div>
+
+<!-- Mobile Card -->
+<div
+  class="md:hidden bg-gradient-to-br from-white to-gray-50 border border-gray-200 rounded-xl p-6 mb-6 shadow-sm hover:shadow-md transition"
+>
+  <h3 class="text-xl font-semibold mb-5">{title}</h3>
+
+  <div class="space-y-4 text-sm">
+    <div class="flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <div
+          class="flex items-center justify-center text-xs font-bold text-blue-900"
+        >
+          ✔
+        </div>
+        <span class="text-blue-900 text-lg font-semibold">NovaTasks</span>
+      </div>
+    </div>
+
+    <div class="flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <div class="flex items-center justify-center text-xs font-bold">
+          {todolist ? "✔" : "✘"}
+        </div>
+        <span class="text-gray-600 font-medium">Todolist</span>
+      </div>
+    </div>
+
+    <div class="flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <div class="flex items-center justify-center text-xs font-bold">
+          {notion ? "✔" : "✘"}
+        </div>
+        <span class="text-gray-600 font-medium">Notion</span>
+      </div>
+    </div>
+  </div>
+</div>

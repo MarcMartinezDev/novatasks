@@ -1,0 +1,43 @@
+---
+import Card from "./components/Card.astro";
+---
+
+<section class="px-2 bg-blue-50 overflow-hidden" id="How">
+  <div
+    class="max-w-4xl mx-auto text-center mb-12 opacity-0 -translate-y-20 transition-all duration-1000 content-down"
+  >
+    <h2 class="text-4xl font-bold tracking-tight text-gray-800 mb-4">
+      How to Get Started with NovaTasks
+    </h2>
+    <p class="text-lg text-gray-600">
+      Follow these simple steps to begin your journey with smarter task
+      management.
+    </p>
+  </div>
+
+  <div
+    class="flex flex-col gap-14 mx-auto opacity-0 -translate-y-20 transition-all duration-1000 content-down"
+  >
+    <Card
+      num="1"
+      title="Create Your Account"
+      desc="Sign up with your email or use a social login to start using NovaTasks instantly."
+      btn={true}
+    />
+    <Card
+      num="2"
+      title="Set Up Your First Task"
+      desc="Quickly add tasks, set deadlines and organize them into smart categories."
+    />
+    <Card
+      num="3"
+      title="Try AI Suggestions"
+      desc="Let NovaTasks recommend tasks and priorities based on your patterns and focus."
+    />
+    <Card
+      num="4"
+      title="Sync Across Devices"
+      desc="Enjoy seamless real-time syncing and track your progress from anywhere."
+    />
+  </div>
+</section>

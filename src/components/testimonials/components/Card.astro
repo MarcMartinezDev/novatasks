@@ -1,0 +1,26 @@
+---
+const { stars, testimonial, name, date } = Astro.props as {
+  stars: string;
+  testimonial: string;
+  name: string;
+  date: string;
+};
+---
+
+<div
+  class="snap-center w-[300px] lg:w-full flex-shrink-0 bg-white border border-gray-100 p-6 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 cursor-default"
+>
+  <div class="flex items-center text-yellow-400 text-lg">
+    {stars}
+  </div>
+
+  <p class="mt-4 text-gray-700 leading-relaxed">
+    “{testimonial}”
+  </p>
+
+  <div class="mt-6">
+    <p class="text-sm font-semibold text-gray-900">{name}</p>
+    <span class="text-xs text-gray-500">{date}</span>
+  </div>
+</div>
+
