@@ -1,16 +1,18 @@
 ---
-const { stars, testimonial, name, date } = Astro.props as {
+import { Image } from "astro:assets";
+const { stars, testimonial, name, date, image } = Astro.props as {
   stars: string;
   testimonial: string;
   name: string;
   date: string;
+  image: ImageMetadata;
 };
 ---
 
 <div
-  class="snap-center w-[300px] lg:w-full flex-shrink-0 bg-white border border-gray-100 p-6 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 cursor-default"
+  class="snap-center w-[300px] lg:w-full flex-shrink-0 bg-white border border-gray-100 p-4 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 cursor-default"
 >
-  <div class="flex items-center text-yellow-400 text-lg">
+  <div class="flex items-center text-yellow-400 text-xl">
     {stars}
   </div>
 
@@ -18,9 +20,17 @@ const { stars, testimonial, name, date } = Astro.props as {
     “{testimonial}”
   </p>
 
-  <div class="mt-6">
-    <p class="text-sm font-semibold text-gray-900">{name}</p>
-    <span class="text-xs text-gray-500">{date}</span>
+  <div class="mt-6 flex gap-2 items-end">
+    <div class="rounded-full h-14 w-14 overflow-hidden">
+      <Image
+        src={image}
+        alt="fictitious person image"
+        class="w-full h-full object-cover"
+      />
+    </div>
+    <div>
+      <p class="text-sm font-semibold text-gray-900">{name}</p>
+      <span class="text-xs text-gray-500">{date}</span>
+    </div>
   </div>
 </div>
-
